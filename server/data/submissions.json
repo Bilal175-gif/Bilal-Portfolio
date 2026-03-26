@@ -1,0 +1,20 @@
+{
+  "contacts": [
+    {
+      "id": "cb8156be-d864-4857-b8fe-9bc4cb4fba93",
+      "createdAt": "2026-03-26T15:18:31.436Z",
+      "name": "Test User",
+      "email": "test@example.com",
+      "phone": "+92 300 123 4567",
+      "service": "Web Development",
+      "message": "We need a modern website and ongoing digital growth support."
+    }
+  ],
+  "newsletter": [
+    {
+      "id": "1ce2c1b8-66a1-41f7-a3c6-bd21a8dae0ad",
+      "createdAt": "2026-03-26T15:18:32.227Z",
+      "email": "subscriber@example.com"
+    }
+  ]
+}

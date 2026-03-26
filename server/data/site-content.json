@@ -1,0 +1,121 @@
+{
+  "company": {
+    "name": "Zepra Tech",
+    "tagline": "Modern digital solutions for ambitious businesses.",
+    "email": "hello@zepratech.com",
+    "phone": "+92 300 555 0190",
+    "location": "Karachi, Pakistan",
+    "responseTime": "Replies within 1 business day"
+  },
+  "stats": [
+    { "value": 120, "suffix": "+", "label": "Projects completed" },
+    { "value": 96, "suffix": "%", "label": "Satisfied clients" },
+    { "value": 280, "suffix": "+", "label": "Campaigns launched" }
+  ],
+  "services": [
+    {
+      "slug": "web-development",
+      "title": "Web Development",
+      "description": "Conversion-focused websites and landing pages built for speed, clarity, and scale."
+    },
+    {
+      "slug": "seo-optimization",
+      "title": "SEO Optimization",
+      "description": "Technical SEO, on-page fixes, and content direction that increase qualified visibility."
+    },
+    {
+      "slug": "digital-marketing",
+      "title": "Digital Marketing",
+      "description": "Integrated paid and organic campaigns designed to attract, nurture, and convert demand."
+    },
+    {
+      "slug": "shopify-store-setup",
+      "title": "Shopify Store Setup",
+      "description": "Store launches, theme customization, and funnel refinement for modern ecommerce brands."
+    },
+    {
+      "slug": "social-media-marketing",
+      "title": "Social Media Marketing",
+      "description": "Platform-specific content systems and campaigns that build attention and trust."
+    },
+    {
+      "slug": "business-growth-strategy",
+      "title": "Business Growth Strategy",
+      "description": "Growth roadmaps that align digital execution with revenue goals and operational reality."
+    }
+  ],
+  "projects": [
+    {
+      "title": "Apex Legal",
+      "category": "Website",
+      "description": "A premium law firm website focused on authority, lead quality, and mobile-first inquiry flow.",
+      "result": "42% increase in consultation requests"
+    },
+    {
+      "title": "Commerce Pulse",
+      "category": "Ecommerce",
+      "description": "A Shopify storefront refresh with cleaner collections, stronger merchandising, and better checkout flow.",
+      "result": "31% lift in conversion rate"
+    },
+    {
+      "title": "VitalEdge Clinics",
+      "category": "Branding",
+      "description": "A healthcare brand system with a modern visual identity, trust-led messaging, and improved local SEO.",
+      "result": "Expanded into 3 new city campaigns"
+    },
+    {
+      "title": "Northbound Studio",
+      "category": "Marketing",
+      "description": "A performance marketing campaign system that combined landing pages, retargeting, and reporting.",
+      "result": "2.4x return on ad spend"
+    }
+  ],
+  "testimonials": [
+    {
+      "name": "Areeba Khan",
+      "role": "Founder, Nova Collective",
+      "rating": 5,
+      "review": "Zepra Tech brought structure to our digital presence and made the entire process feel organized, fast, and premium."
+    },
+    {
+      "name": "David Hassan",
+      "role": "Director, Apex Legal",
+      "rating": 5,
+      "review": "The team understood our audience immediately and built a website that finally reflects the standard of our firm."
+    },
+    {
+      "name": "Sara Mahmood",
+      "role": "Marketing Lead, VitalEdge",
+      "rating": 5,
+      "review": "From branding to SEO improvements, every recommendation felt strategic and tied to an actual business outcome."
+    },
+    {
+      "name": "Imran Qureshi",
+      "role": "Owner, Commerce Pulse",
+      "rating": 5,
+      "review": "We needed a sharper ecommerce experience and Zepra Tech delivered with speed, clarity, and real performance gains."
+    }
+  ],
+  "faqs": [
+    {
+      "question": "What types of businesses do you work with?",
+      "answer": "We typically work with service businesses, startups, consultants, ecommerce brands, and teams that need sharper digital positioning."
+    },
+    {
+      "question": "Can you handle both strategy and execution?",
+      "answer": "Yes. Zepra Tech supports planning, design, development, launch, and ongoing growth support under one process."
+    },
+    {
+      "question": "How long does a typical project take?",
+      "answer": "Smaller website or campaign engagements can move in a few weeks, while broader growth systems depend on scope and feedback cycles."
+    },
+    {
+      "question": "Do you offer Shopify and marketing services together?",
+      "answer": "Yes. We often combine storefront improvements with SEO, campaign support, and post-launch optimization."
+    },
+    {
+      "question": "What happens after launch?",
+      "answer": "We can continue with growth support, reporting, optimization, content planning, or conversion-focused refinements."
+    }
+  ]
+}
