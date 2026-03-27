@@ -2,10 +2,10 @@
 import { onBeforeUnmount, onMounted, ref, watch } from 'vue';
 import { RouterLink, useRoute } from 'vue-router';
 import { Menu } from 'lucide-vue-next';
-import IconSymbol from '@/components/ui/IconSymbol.vue';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from '@/components/ui/sheet';
 import { company, navLinks } from '@/data/siteContent';
+import logoImage from '@/assets/logo.png';
 
 const route = useRoute();
 const isScrolled = ref(false);
@@ -40,7 +40,7 @@ onBeforeUnmount(() => {
   <header class="navbar" :class="{ 'is-scrolled': isScrolled }">
     <div class="container navbar__inner">
       <RouterLink class="brand" to="/" @click="closeMenu">
-        <span class="brand__mark">ZT</span>
+        <img :src="logoImage" alt="Zepra Tech logo" class="brand__logo" />
         <span class="brand__meta">
           <strong>{{ company.name }}</strong>
           <small>Digital Growth Agency</small>

@@ -1,6 +1,8 @@
 node_modules/
 dist/
 .vite/
+.next/
+out/
 .env
 *.log
 vite.config.js.timestamp-*.mjs

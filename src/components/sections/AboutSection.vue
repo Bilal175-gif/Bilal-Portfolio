@@ -14,6 +14,7 @@ const { sectionRef } = useRevealOnScroll();
     <div class="container about-section">
       <div class="about-section__intro">
         <SectionHeading
+        class="text-white"
           eyebrow="About Zepra Tech"
           title="A growth partner for businesses that need more than a basic online presence."
           description="We blend strategy, design, development, and performance thinking to help brands grow with clarity and confidence."
