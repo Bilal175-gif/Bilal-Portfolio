@@ -1,4 +1,4 @@
-# Zepra Tech
+# Bilal Portfolio
 
 Modern, responsive business website for Zepra Tech built with Vue 3, JavaScript, Vue Router, and custom CSS.
 
