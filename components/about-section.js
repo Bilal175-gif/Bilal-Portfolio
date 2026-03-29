@@ -9,8 +9,8 @@ export function AboutSection({ profile }) {
     <section id="about" className="section-shell section-padding">
       <SectionHeading
         eyebrow="About"
-        title="A dark, modern portfolio direction centered on polish, narrative flow, and careful performance."
-        description="Designed for first impressions that feel intentional: immersive on desktop, graceful on tablet and mobile, and structured to be easy to update."
+        title="A short introduction based on Bilal's public profile and current project work."
+        description="This section focuses on the tools, project types, and development direction visible across the portfolio and linked public accounts."
       />
 
       <div className="grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
@@ -30,7 +30,7 @@ export function AboutSection({ profile }) {
             <div className="rounded-[24px] border border-white/10 bg-white/[0.03] p-5">
               <p className="text-xs uppercase tracking-[0.28em] text-white/42">Presence</p>
               <p className="mt-3 text-lg font-semibold text-white">
-                Clear enough for recruiters, distinctive enough to be remembered.
+                Focused on practical frontend and web development work.
               </p>
             </div>
             <div className="rounded-[24px] border border-white/10 bg-white/[0.03] p-5">

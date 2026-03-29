@@ -1,4 +1,4 @@
-import { AboutSection } from "@/components/about-section";
+﻿import { AboutSection } from "@/components/about-section";
 import { ContactSection } from "@/components/contact-section";
 import { ExperienceSection } from "@/components/experience-section";
 import { HeroSection } from "@/components/hero-section";
@@ -27,7 +27,7 @@ export default function HomePage() {
         <ExperienceSection experience={experience} />
         <ContactSection contact={contact} profile={profile} />
         <footer className="section-shell pb-8 pt-2 text-sm text-white/45">
-          Built to feel premium for recruiters, collaborators, and modern product teams.
+          Built around Bilal Shah Gillani's public portfolio, GitHub work, and LinkedIn contact details.
         </footer>
       </main>
     </>

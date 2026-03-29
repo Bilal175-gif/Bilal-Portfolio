@@ -5,8 +5,8 @@ export function ExperienceSection({ experience }) {
     <section id="experience" className="section-shell section-padding">
       <SectionHeading
         eyebrow="Experience"
-        title="A modern timeline focused on how the work is approached, shaped, and delivered."
-        description="Instead of a crowded resume dump, this section emphasizes the kind of frontend and interaction work that makes the portfolio feel intentional."
+        title="A simple timeline based on public project activity and current development focus."
+        description="This section summarizes the kind of work visible through Bilal's GitHub repositories rather than using generic portfolio claims."
       />
 
       <div className="relative mx-auto max-w-5xl">

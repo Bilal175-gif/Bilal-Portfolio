@@ -15,10 +15,10 @@ export function ContactSection({ contact, profile }) {
       <div className="grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
         <div className="glass-panel rounded-[34px] p-7 md:p-9" data-reveal>
           <p className="text-xs uppercase tracking-[0.3em] text-white/42">Primary Channel</p>
-          <h3 className="mt-4 text-3xl font-semibold text-white">LinkedIn conversation, polished first touch.</h3>
+          <h3 className="mt-4 text-3xl font-semibold text-white">LinkedIn for contact, GitHub for project proof.</h3>
           <p className="mt-4 max-w-2xl text-sm leading-7 text-white/68 md:text-base">
-            This contact block stays deliberately minimal so the overall experience feels clean.
-            The main call to action is direct, visible, and easy to act on.
+            The main contact path is LinkedIn, while GitHub gives a direct view of public repositories
+            and recent project work.
           </p>
 
           <div className="mt-8 flex flex-wrap gap-3">
