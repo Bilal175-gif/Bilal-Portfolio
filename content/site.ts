@@ -128,13 +128,6 @@ export type SiteConfig = {
     };
     readonly coreStack: readonly string[];
   };
-  readonly learning: {
-    readonly title: string;
-    readonly provider: string;
-    readonly url: string;
-    readonly summary: string;
-    readonly topics: readonly string[];
-  };
   readonly contact: {
     readonly heading: string;
     readonly description: string;
@@ -200,26 +193,6 @@ export const siteConfig = {
       availability: "Open to internships and junior roles",
     },
     coreStack: ["Python", "Gemini", "LangChain", "Hugging Face"],
-  },
-  learning: {
-    title:
-      "Generative AI Full Course — Gemini Pro, OpenAI, Llama, LangChain, Pinecone, Vector Databases & More",
-    provider: "freeCodeCamp.org",
-    url: "https://www.youtube.com/watch?v=mEsleV16qdo",
-    summary:
-      "A structured learning path covering Generative AI foundations, LLM APIs, orchestration, memory, vector search, end-to-end projects, and deployment.",
-    topics: [
-      "OpenAI API",
-      "LangChain",
-      "Hugging Face API",
-      "LangChain memory",
-      "LLM project deployment",
-      "Vector databases",
-      "Pinecone",
-      "ChromaDB",
-      "Meta Llama 2",
-      "Gemini Pro",
-    ],
   },
   contact: {
     heading: "A direct route to the next conversation.",
