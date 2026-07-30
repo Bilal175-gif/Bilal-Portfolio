@@ -22,6 +22,22 @@ export function ProjectVisual({ slug, title }: ProjectVisualProps) {
     );
   }
 
+  if (slug === "vivid-horizon") {
+    return (
+      <div
+        className="project-visual project-visual--vivid project-visual--artwork"
+      >
+        <Image
+          alt={`${title} editorial dashboard showing publishing tools, content metrics, and quick-publish controls`}
+          className="project-visual__artwork"
+          fill
+          sizes="(max-width: 899px) calc(100vw - 2rem), (max-width: 1279px) 50vw, 720px"
+          src="/vivid-horizon-dashboard.png"
+        />
+      </div>
+    );
+  }
+
   return (
     <div
       className="project-visual project-visual--vivid"
