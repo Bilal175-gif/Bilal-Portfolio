@@ -1,7 +1,7 @@
 "use client";
 
 import { ArrowUpRight, Check, MousePointer2, X } from "lucide-react";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import type { CSSProperties } from "react";
 
 import type { Skill } from "@/content/site";
@@ -15,18 +15,42 @@ type SkillStyle = CSSProperties & {
 export function SkillsExplorer({ skills }: { skills: readonly Skill[] }) {
   const [activeId, setActiveId] = useState(skills[0]?.id ?? "");
   const [detailOpen, setDetailOpen] = useState(false);
+  const closeButtonRef = useRef<HTMLButtonElement>(null);
   const activeSkill = skills.find((skill) => skill.id === activeId) ?? skills[0];
+
+  const closeDetail = () => {
+    setDetailOpen(false);
+    window.setTimeout(() => {
+      document
+        .querySelector<HTMLButtonElement>(
+          `.skill-tile[data-skill-id="${activeId}"]`,
+        )
+        ?.focus();
+    }, 0);
+  };
 
   useEffect(() => {
     const closeOnEscape = (event: KeyboardEvent) => {
       if (event.key === "Escape") {
-        setDetailOpen(false);
+        closeDetail();
       }
     };
 
     window.addEventListener("keydown", closeOnEscape);
     return () => window.removeEventListener("keydown", closeOnEscape);
-  }, []);
+  });
+
+  useEffect(() => {
+    if (!detailOpen) return;
+
+    closeButtonRef.current?.focus();
+    const previousOverflow = document.documentElement.style.overflow;
+    document.documentElement.style.overflow = "hidden";
+
+    return () => {
+      document.documentElement.style.overflow = previousOverflow;
+    };
+  }, [detailOpen]);
 
   if (!activeSkill) {
     return null;
@@ -64,18 +88,22 @@ export function SkillsExplorer({ skills }: { skills: readonly Skill[] }) {
                 style={style}
                 type="button"
               >
-                <span className="skill-tile__logo">
-                  {/* Brand SVGs are decorative because the visible label names each skill. */}
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img alt="" height="34" src={skill.logo} width="34" />
+                <span className="skill-tile__top">
+                  <span className="skill-tile__logo">
+                    {/* Brand SVGs are decorative because the visible label names each skill. */}
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img alt="" height="64" src={skill.logo} width="64" />
+                  </span>
+                  <span className="skill-tile__badge">{skill.status}</span>
                 </span>
                 <span className="skill-tile__copy">
                   <small>{skill.category}</small>
                   <strong>{skill.name}</strong>
-                  <span>{skill.status}</span>
+                  <span>{skill.summary}</span>
                 </span>
-                <span className="skill-tile__arrow" aria-hidden="true">
-                  <ArrowUpRight size={17} strokeWidth={1.8} />
+                <span className="skill-tile__action">
+                  Explore skill
+                  <ArrowUpRight aria-hidden="true" size={18} strokeWidth={1.9} />
                 </span>
               </button>
             );
@@ -86,17 +114,20 @@ export function SkillsExplorer({ skills }: { skills: readonly Skill[] }) {
           aria-label="Close selected skill details"
           className="skill-detail-backdrop"
           data-open={detailOpen}
-          onClick={() => setDetailOpen(false)}
+          onClick={closeDetail}
           type="button"
         />
 
         <article
+          aria-label={`${activeSkill.name} details`}
           aria-live="polite"
+          aria-modal="true"
           className="skill-detail"
           data-open={detailOpen}
           data-skill-id={activeSkill.id}
           id="selected-skill-detail"
           key={activeSkill.id}
+          role="dialog"
           style={
             {
               "--skill-color": activeSkill.color,
@@ -107,7 +138,8 @@ export function SkillsExplorer({ skills }: { skills: readonly Skill[] }) {
           <button
             aria-label="Close skill details"
             className="skill-detail__close"
-            onClick={() => setDetailOpen(false)}
+            onClick={closeDetail}
+            ref={closeButtonRef}
             type="button"
           >
             <X aria-hidden="true" size={18} />
