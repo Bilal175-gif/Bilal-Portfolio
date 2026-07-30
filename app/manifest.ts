@@ -5,7 +5,7 @@ export default function manifest(): MetadataRoute.Manifest {
     name: "Muhammad Bilal — Portfolio",
     short_name: "Bilal Portfolio",
     description:
-      "Frontend-focused full-stack developer portfolio for Muhammad Bilal.",
+      "Generative AI Engineer portfolio for Muhammad Bilal.",
     start_url: "/",
     display: "standalone",
     background_color: "#070b10",

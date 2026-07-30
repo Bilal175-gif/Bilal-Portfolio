@@ -10,7 +10,7 @@ export type HomeHighlight = {
 };
 
 export type Capability = {
-  readonly key: "frontend" | "fullstack" | "usability";
+  readonly key: "genai" | "retrieval" | "product";
   readonly title: string;
   readonly description: string;
   readonly items: readonly string[];
@@ -18,30 +18,29 @@ export type Capability = {
 
 export type SkillGroup = {
   readonly id:
-    | "languages"
-    | "frontend"
-    | "backend-and-apis"
-    | "databases"
-    | "developer-tools"
-    | "product-workflows";
+    | "genai-foundations"
+    | "llm-models"
+    | "orchestration"
+    | "retrieval"
+    | "ai-application"
+    | "supporting-stack";
   readonly title: string;
   readonly description: string;
   readonly skills: readonly string[];
 };
 
 export type TimelineItem = {
-  readonly id: "rollitech" | "independent-projects" | "education";
+  readonly id:
+    | "genai-learning"
+    | "rollitech"
+    | "independent-projects"
+    | "education";
   readonly period: string;
   readonly title: string;
   readonly organisation: string;
   readonly location?: string;
   readonly summary: string;
   readonly highlights: readonly string[];
-};
-
-export type WorkingPrinciple = {
-  readonly title: string;
-  readonly description: string;
 };
 
 export type ProjectFlow = {
@@ -120,13 +119,20 @@ export type SiteConfig = {
       readonly role: string;
       readonly focus: readonly string[];
       readonly stack: {
-        readonly frontend: readonly string[];
-        readonly backend: readonly string[];
-        readonly data: readonly string[];
+        readonly models: readonly string[];
+        readonly orchestration: readonly string[];
+        readonly retrieval: readonly string[];
       };
       readonly availability: string;
     };
     readonly coreStack: readonly string[];
+  };
+  readonly learning: {
+    readonly title: string;
+    readonly provider: string;
+    readonly url: string;
+    readonly summary: string;
+    readonly topics: readonly string[];
   };
   readonly contact: {
     readonly heading: string;
@@ -136,13 +142,12 @@ export type SiteConfig = {
 };
 
 const professionalSummary =
-  "Computer Science undergraduate and frontend-focused full-stack developer with hands-on experience building responsive web applications, product interfaces, editorial dashboards, and REST API workflows. Strongest in React, Next.js, and TypeScript, with practical backend experience using Node.js, FastAPI, MongoDB, PostgreSQL, and Postman. Completed a web development internship at Rollitech, contributing to application development, testing, and maintenance in a collaborative team environment.";
+  "Computer Science undergraduate and Generative AI Engineer focused on building practical LLM-powered applications and dependable product experiences. My current learning track covers OpenAI and Gemini APIs, LangChain, Hugging Face, vector databases, Pinecone, ChromaDB, Llama 2, retrieval workflows, and AI application deployment. I bring an existing full-stack foundation across Python, FastAPI, React, Next.js, TypeScript, REST APIs, MongoDB, and PostgreSQL.";
 
 export const siteConfig = {
   name: "Muhammad Bilal",
-  professionalTitle:
-    "Software Engineer | Frontend-focused full-stack developer",
-  shortTitle: "Frontend-focused full-stack developer",
+  professionalTitle: "Generative AI Engineer | AI application developer",
+  shortTitle: "Generative AI Engineer",
   url: "https://bilalgilani.me",
   email: "bilalshah2237463@gmail.com",
   phone: "+92 325 8166829",
@@ -151,7 +156,7 @@ export const siteConfig = {
   github: "https://github.com/Bilal175-gif",
   cvPath: "/Muhammad-Bilal-CV.pdf",
   description:
-    "Muhammad Bilal is a frontend-focused full-stack developer in Lahore building responsive product interfaces with React, Next.js, and TypeScript.",
+    "Muhammad Bilal is a Generative AI Engineer in Lahore focused on practical LLM applications, LangChain workflows, vector search, and full-stack AI products.",
   profile: {
     location: "Lahore, Pakistan",
     summary: professionalSummary,
@@ -167,9 +172,9 @@ export const siteConfig = {
     },
   },
   hero: {
-    eyebrow: "Frontend-focused full-stack developer",
+    eyebrow: "Generative AI Engineer",
     heading:
-      "Building useful digital products with clean frontend engineering.",
+      "Engineering practical AI experiences with LLMs, retrieval, and reliable product foundations.",
     primaryCta: {
       label: "View projects",
       href: "/projects",
@@ -180,25 +185,45 @@ export const siteConfig = {
     },
     codeProfile: {
       name: "Muhammad Bilal",
-      role: "Frontend-focused full-stack developer",
+      role: "Generative AI Engineer",
       focus: [
-        "Product interfaces",
-        "Responsive web applications",
-        "REST API workflows",
+        "LLM-powered applications",
+        "Retrieval and vector search",
+        "AI product engineering",
       ],
       stack: {
-        frontend: ["React", "Next.js", "TypeScript"],
-        backend: ["Node.js", "FastAPI"],
-        data: ["MongoDB", "PostgreSQL"],
+        models: ["OpenAI", "Gemini", "Llama 2"],
+        orchestration: ["LangChain", "Hugging Face"],
+        retrieval: ["Pinecone", "ChromaDB"],
       },
       availability: "Open to internships and junior roles",
     },
-    coreStack: ["React", "TypeScript", "Next.js", "REST APIs"],
+    coreStack: ["Python", "Gemini", "LangChain", "Hugging Face"],
+  },
+  learning: {
+    title:
+      "Generative AI Full Course — Gemini Pro, OpenAI, Llama, LangChain, Pinecone, Vector Databases & More",
+    provider: "freeCodeCamp.org",
+    url: "https://www.youtube.com/watch?v=mEsleV16qdo",
+    summary:
+      "A structured learning path covering Generative AI foundations, LLM APIs, orchestration, memory, vector search, end-to-end projects, and deployment.",
+    topics: [
+      "OpenAI API",
+      "LangChain",
+      "Hugging Face API",
+      "LangChain memory",
+      "LLM project deployment",
+      "Vector databases",
+      "Pinecone",
+      "ChromaDB",
+      "Meta Llama 2",
+      "Gemini Pro",
+    ],
   },
   contact: {
     heading: "A direct route to the next conversation.",
     description:
-      "For internships, junior software engineering roles, frontend opportunities, or practical collaboration, email and LinkedIn are the fastest ways to reach me.",
+      "For Generative AI internships, junior AI engineering roles, LLM application work, or practical collaboration, email and LinkedIn are the fastest ways to reach me.",
     methods: [
       {
         key: "email",
@@ -256,14 +281,14 @@ export const homeHighlights = [
     description: "Available for remote collaboration",
   },
   {
-    label: "Experience",
-    value: "March–May 2026",
-    description: "Web Development Intern at Rollitech",
+    label: "Current focus",
+    value: "Generative AI",
+    description: "LLM applications, orchestration, and retrieval",
   },
   {
-    label: "Frontend focus",
-    value: "React · Next.js · TypeScript",
-    description: "Supported by practical backend and API experience",
+    label: "AI learning stack",
+    value: "OpenAI · Gemini · LangChain",
+    description: "Supported by Python, FastAPI, and full-stack engineering",
   },
   {
     label: "Education",
@@ -274,112 +299,141 @@ export const homeHighlights = [
 
 export const capabilities = [
   {
-    key: "frontend",
-    title: "Frontend systems",
+    key: "genai",
+    title: "LLM application engineering",
     description:
-      "Responsive product interfaces built with React, Next.js, TypeScript, and component-based UI development.",
+      "Building an applied understanding of LLM APIs, prompt-driven workflows, model integration, memory, and end-to-end Generative AI applications.",
     items: [
-      "Responsive web design",
-      "Component-based UI",
-      "API integration",
+      "OpenAI and Gemini APIs",
+      "LangChain workflows",
+      "Model integration",
     ],
   },
   {
-    key: "fullstack",
-    title: "Practical full stack",
+    key: "retrieval",
+    title: "Retrieval and vector search",
     description:
-      "Hands-on backend and API work using Node.js, FastAPI, MongoDB, PostgreSQL, REST APIs, and Postman.",
+      "Learning how embeddings, retrieval workflows, and vector databases connect private knowledge to useful LLM responses.",
     items: [
-      "REST API workflows",
-      "CRUD operations",
-      "Request and response validation",
+      "Vector databases",
+      "Pinecone and ChromaDB",
+      "Retrieval workflows",
     ],
   },
   {
-    key: "usability",
-    title: "Recruiter usability",
+    key: "product",
+    title: "Full-stack AI products",
     description:
-      "Clear project context, visible contribution details, live links, and direct contact options make the work straightforward to review.",
+      "Combining AI services with Python, FastAPI, APIs, databases, and responsive interfaces to build complete product experiences.",
     items: [
-      "Focused project stories",
-      "Explicit contributions",
-      "Direct contact paths",
+      "Python and FastAPI",
+      "REST API integration",
+      "React and Next.js",
     ],
   },
 ] as const satisfies readonly Capability[];
 
 export const skillGroups = [
   {
-    id: "languages",
-    title: "Languages",
+    id: "genai-foundations",
+    title: "Generative AI foundations",
     description:
-      "Core languages used across interface, API, database, and application work.",
-    skills: ["TypeScript", "JavaScript", "Python", "SQL", "HTML5", "CSS3"],
-  },
-  {
-    id: "frontend",
-    title: "Frontend",
-    description:
-      "Primary area of strength: responsive product interfaces and component-based web development.",
+      "Concepts currently being developed through structured course-led learning and practical exploration.",
     skills: [
-      "React",
-      "Next.js",
-      "Responsive web design",
-      "Component-based UI development",
-      "API integration",
+      "Generative models",
+      "Large Language Models",
+      "Prompt design",
+      "Tokens and context",
+      "LLM application patterns",
     ],
   },
   {
-    id: "backend-and-apis",
-    title: "Backend and APIs",
+    id: "llm-models",
+    title: "LLM APIs and models",
     description:
-      "Practical backend experience supporting connected product workflows.",
+      "Model providers and APIs covered across the linked Generative AI learning track.",
     skills: [
-      "Node.js",
+      "OpenAI API",
+      "Gemini Pro",
+      "Meta Llama 2",
+      "Hugging Face API",
+      "Model integration",
+    ],
+  },
+  {
+    id: "orchestration",
+    title: "Orchestration and memory",
+    description:
+      "Structuring multi-step LLM application behavior with reusable chains, prompts, and conversational context.",
+    skills: [
+      "LangChain",
+      "Prompt templates",
+      "Chains",
+      "Conversation memory",
+      "LLM workflows",
+    ],
+  },
+  {
+    id: "retrieval",
+    title: "Retrieval and vector databases",
+    description:
+      "Course-led understanding of embeddings, document retrieval, semantic search, and vector-backed AI applications.",
+    skills: [
+      "Embeddings",
+      "Vector search",
+      "Vector databases",
+      "Pinecone",
+      "ChromaDB",
+      "Retrieval workflows",
+    ],
+  },
+  {
+    id: "ai-application",
+    title: "AI application engineering",
+    description:
+      "The application layer used to connect models, APIs, data, and deployable product workflows.",
+    skills: [
+      "Python",
       "FastAPI",
       "REST APIs",
-      "CRUD operations",
-      "Request/response validation",
-    ],
-  },
-  {
-    id: "databases",
-    title: "Databases",
-    description:
-      "Application data work across document and relational databases.",
-    skills: ["MongoDB", "PostgreSQL"],
-  },
-  {
-    id: "developer-tools",
-    title: "Developer tools",
-    description:
-      "Tools used for version control, deployment, API testing, debugging, and browser-based development.",
-    skills: [
-      "Git",
-      "GitHub",
-      "Postman",
-      "Vercel",
-      "Browser developer tools",
+      "LLM project deployment",
+      "API testing",
       "Debugging",
     ],
   },
   {
-    id: "product-workflows",
-    title: "Product workflows",
+    id: "supporting-stack",
+    title: "Supporting full-stack foundation",
     description:
-      "Practical workflows used across product interfaces, publishing systems, testing, and quality assurance.",
+      "Existing web engineering skills that support usable, connected, and deployable AI product experiences.",
     skills: [
-      "Responsive product interfaces",
-      "Startup-planning workflows",
-      "Editorial content management",
-      "Authentication pages",
-      "SEO audits and analytics",
-      "Testing and quality assurance",
+      "React",
+      "Next.js",
+      "TypeScript",
+      "Node.js",
+      "MongoDB",
+      "PostgreSQL",
+      "Git and GitHub",
+      "Vercel",
     ],
   },
 ] as const satisfies readonly SkillGroup[];
 
 export const timeline = [
+  {
+    id: "genai-learning",
+    period: "Current learning track",
+    title: "Generative AI Engineering",
+    organisation: "freeCodeCamp.org structured course",
+    summary:
+      "Developing an applied understanding of LLM APIs, LangChain workflows, model integration, vector databases, retrieval, end-to-end projects, and deployment.",
+    highlights: [
+      "Studying OpenAI API, Gemini Pro, Meta Llama 2, and Hugging Face API integration.",
+      "Following practical LangChain modules covering chains, prompts, and conversational memory.",
+      "Learning vector database workflows with Pinecone and ChromaDB.",
+      "Connecting Generative AI concepts to Python, FastAPI, APIs, and deployable product experiences.",
+    ],
+  },
   {
     id: "rollitech",
     period: "March 2026 – May 2026",
@@ -416,40 +470,12 @@ export const timeline = [
     summary:
       "Computer Science undergraduate with an expected graduation in 2029.",
     highlights: [
-      "Frontend-focused full-stack development",
-      "Responsive web applications and product interfaces",
-      "Practical backend, API, and database experience",
+      "Generative AI and LLM application engineering",
+      "Full-stack web applications and product interfaces",
+      "Practical backend, API, and database foundations",
     ],
   },
 ] as const satisfies readonly TimelineItem[];
-
-export const workingPrinciples = [
-  {
-    title: "Make the purpose clear",
-    description:
-      "Build interfaces that communicate their purpose quickly and remain straightforward to use.",
-  },
-  {
-    title: "Design responsively",
-    description:
-      "Treat responsive behaviour as part of the product experience from the start.",
-  },
-  {
-    title: "Use component-based structure",
-    description:
-      "Organise repeated interface patterns into focused, maintainable components.",
-  },
-  {
-    title: "Connect the complete workflow",
-    description:
-      "Consider API integration, request and response behaviour, and data flow alongside the visible interface.",
-  },
-  {
-    title: "Test and debug deliberately",
-    description:
-      "Use browser developer tools, Postman, debugging, and quality-assurance checks throughout development.",
-  },
-] as const satisfies readonly WorkingPrinciple[];
 
 export const projects = [
   {

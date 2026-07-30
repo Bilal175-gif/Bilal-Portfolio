@@ -25,12 +25,12 @@ const personSchema = {
   },
   sameAs: [siteConfig.linkedin, siteConfig.github],
   knowsAbout: [
-    "React",
-    "Next.js",
-    "TypeScript",
-    "Responsive web design",
-    "REST APIs",
-    "Node.js",
+    "Generative AI",
+    "Large Language Models",
+    "LangChain",
+    "Vector databases",
+    "Python",
+    "FastAPI",
   ],
 };
 
@@ -49,7 +49,7 @@ const websiteSchema = {
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: `${siteConfig.name} | Frontend-focused full-stack developer`,
+    default: `${siteConfig.name} | Generative AI Engineer`,
     template: `%s | ${siteConfig.name}`,
   },
   description: siteConfig.description,
@@ -61,11 +61,12 @@ export const metadata: Metadata = {
   },
   keywords: [
     "Muhammad Bilal",
-    "frontend developer Lahore",
-    "React developer",
-    "Next.js developer",
-    "TypeScript developer",
-    "full-stack developer portfolio",
+    "Generative AI Engineer Lahore",
+    "LLM application developer",
+    "LangChain developer",
+    "vector database developer",
+    "Python FastAPI developer",
+    "Generative AI portfolio",
   ],
   alternates: {
     canonical: "/",
@@ -75,12 +76,12 @@ export const metadata: Metadata = {
     locale: "en_PK",
     url: "/",
     siteName: `${siteConfig.name} Portfolio`,
-    title: `${siteConfig.name} | Frontend-focused full-stack developer`,
+    title: `${siteConfig.name} | Generative AI Engineer`,
     description: siteConfig.description,
   },
   twitter: {
     card: "summary_large_image",
-    title: `${siteConfig.name} | Frontend-focused full-stack developer`,
+    title: `${siteConfig.name} | Generative AI Engineer`,
     description: siteConfig.description,
   },
 };

@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 
 import { ProjectCard } from "@/components/project-card";
-import { CtaPanel, PageIntro } from "@/components/ui";
-import { projects, siteConfig } from "@/content/site";
+import { PageIntro } from "@/components/ui";
+import { projects } from "@/content/site";
 
 const description =
-  "Explore Muhammad Bilal’s frontend and full-stack product work across startup planning and technology publishing platforms.";
+  "Explore Muhammad Bilal’s product engineering work across AI startup planning and technology publishing platforms.";
 
 export const metadata: Metadata = {
   title: "Projects",
@@ -29,10 +29,10 @@ export default function ProjectsPage() {
     <>
       <PageIntro
         eyebrow="Selected projects"
-        title="Product work with a clear point of view."
-        description="Two substantial platforms that show responsive UI engineering, product thinking, dashboard design, API workflows, content systems, and practical full-stack development."
+        title="The product foundation behind useful AI systems."
+        description="These shipped platforms demonstrate responsive interfaces, API workflows, dashboard design, and connected systems—the engineering layer required to deliver complete Generative AI products."
         tags={[
-          "Responsive product interfaces",
+          "AI product interfaces",
           "Connected API workflows",
           "Editorial systems",
           "Live project links",
@@ -47,16 +47,6 @@ export default function ProjectsPage() {
         </div>
       </section>
 
-      <CtaPanel
-        title="Want the concise version?"
-        description="The attached CV brings my experience, technical skills, education, and selected work into one easy-to-review document."
-        primary={{ label: "Contact me", href: "/contact" }}
-        secondary={{
-          label: "Download CV",
-          href: siteConfig.cvPath,
-          download: true,
-        }}
-      />
     </>
   );
 }

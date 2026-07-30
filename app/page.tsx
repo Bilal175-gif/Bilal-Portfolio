@@ -4,7 +4,7 @@ import { CapabilityCard } from "@/components/capability-card";
 import { CodeProfileCard } from "@/components/code-profile-card";
 import { HighlightStrip } from "@/components/highlight-strip";
 import { ProjectCard } from "@/components/project-card";
-import { ButtonLink, CtaPanel, Eyebrow, SectionHeading } from "@/components/ui";
+import { ButtonLink, Eyebrow, SectionHeading } from "@/components/ui";
 import {
   capabilities,
   homeHighlights,
@@ -13,18 +13,18 @@ import {
 } from "@/content/site";
 
 export const metadata: Metadata = {
-  title: "Frontend-focused full-stack developer",
+  title: "Generative AI Engineer",
   description: siteConfig.description,
   alternates: {
     canonical: "/",
   },
   openGraph: {
-    title: "Muhammad Bilal | Frontend-focused full-stack developer",
+    title: "Muhammad Bilal | Generative AI Engineer",
     description: siteConfig.description,
     url: "/",
   },
   twitter: {
-    title: "Muhammad Bilal | Frontend-focused full-stack developer",
+    title: "Muhammad Bilal | Generative AI Engineer",
     description: siteConfig.description,
   },
 };
@@ -37,14 +37,14 @@ export default function HomePage() {
           <div className="hero-copy">
             <Eyebrow>{siteConfig.hero.eyebrow}</Eyebrow>
             <h1>
-              Building useful digital products with{" "}
-              <em>clean frontend engineering.</em>
+              Building practical AI products with{" "}
+              <em>LLMs and retrieval.</em>
             </h1>
             <p className="hero-summary">
               I&apos;m Muhammad Bilal, a Computer Science undergraduate in Lahore. I
-              build responsive web applications, product interfaces, editorial
-              dashboards, and practical API workflows with React, Next.js,
-              TypeScript, and full-stack tools.
+              focus on Generative AI applications using model APIs, LangChain,
+              vector search, Python, FastAPI, and a dependable full-stack
+              foundation.
             </p>
             <div className="hero-actions">
               <ButtonLink href={siteConfig.hero.primaryCta.href} arrow>
@@ -74,8 +74,8 @@ export default function HomePage() {
         <div className="container">
           <SectionHeading
             eyebrow="Selected projects"
-            title="Product work with a clear point of view."
-            description="Two substantial platforms showing responsive interface engineering, product thinking, connected workflows, and practical full-stack development."
+            title="Product engineering that supports the AI layer."
+            description="Two shipped platforms showing the interface, API, dashboard, and workflow experience I bring to complete Generative AI products."
           />
           <div className="project-grid">
             {projects.map((project, index) => (
@@ -88,9 +88,9 @@ export default function HomePage() {
       <section className="section-block">
         <div className="container">
           <SectionHeading
-            eyebrow="Capabilities"
-            title="Frontend clarity, supported by practical full-stack understanding."
-            description="I work across the visible interface and the connected product workflow, with a strong bias toward usable, responsive frontend systems."
+            eyebrow="Generative AI focus"
+            title="From model APIs to useful product experiences."
+            description="My current direction combines structured Generative AI learning with practical full-stack engineering across APIs, data, deployment, and responsive interfaces."
           />
           <div className="capabilities-grid">
             {capabilities.map((capability, index) => (
@@ -104,16 +104,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      <CtaPanel
-        title="Have a role or product that needs thoughtful frontend work?"
-        description="I’m open to internships, junior software engineering roles, frontend opportunities, and practical remote collaboration."
-        primary={{ label: "Start a conversation", href: "/contact" }}
-        secondary={{
-          label: "Download CV",
-          href: siteConfig.cvPath,
-          download: true,
-        }}
-      />
     </>
   );
 }

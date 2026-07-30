@@ -3,8 +3,8 @@ import { ArrowLeft, ArrowUpRight } from "lucide-react";
 import { notFound } from "next/navigation";
 
 import { ProjectVisual } from "@/components/project-visual";
-import { ButtonLink, CtaPanel, Eyebrow, TagList } from "@/components/ui";
-import { projects, siteConfig } from "@/content/site";
+import { ButtonLink, Eyebrow, TagList } from "@/components/ui";
+import { projects } from "@/content/site";
 
 type ProjectPageProps = {
   params: Promise<{
@@ -166,16 +166,6 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
         </div>
       </section>
 
-      <CtaPanel
-        title="Interested in the thinking behind the interface?"
-        description="I’m happy to discuss the product context, implementation work, or a relevant early-career opportunity."
-        primary={{ label: "Contact me", href: "/contact" }}
-        secondary={{
-          label: "Download CV",
-          href: siteConfig.cvPath,
-          download: true,
-        }}
-      />
     </>
   );
 }

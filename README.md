@@ -1,13 +1,16 @@
 # Muhammad Bilal — Portfolio
 
-Recruiter-first developer portfolio for [bilalgilani.me](https://bilalgilani.me), built with the Next.js App Router, React, TypeScript, and custom CSS.
+Generative AI Engineer portfolio for [bilalgilani.me](https://bilalgilani.me), built with the Next.js App Router, React, TypeScript, and custom CSS.
 
 ## What is included
 
-- Dark navy and mint visual system with static glow treatment
+- Deep navy visual system with cyan, violet, and warm gradient accents
 - Responsive, accessible desktop and mobile navigation
 - Typed portfolio content in `content/site.ts`
 - Home, projects, about, experience, skills, and contact pages
+- Generative AI learning track covering LLM APIs, LangChain, Hugging Face, vector databases, Pinecone, ChromaDB, Llama 2, and Gemini Pro
+- Bundled technology logos with reduced-motion-safe animation
+- Portrait-led About page with GitHub, LinkedIn, and copyable email
 - LaunchMind AI and Vivid Horizon case studies
 - Permanent redirects from `/work` to `/projects` and `/learning` to `/skills`
 - Page metadata, Open Graph image, JSON-LD, sitemap, robots, manifest, and custom 404

@@ -1,10 +1,12 @@
-import { Braces, Code2, Layers3, Waypoints } from "lucide-react";
-
 const stack = [
-  { name: "React", icon: Code2 },
-  { name: "TypeScript", icon: Braces },
-  { name: "Next.js", icon: Layers3 },
-  { name: "REST APIs", icon: Waypoints },
+  { name: "Python", logo: "/tech/python.svg", tone: "python" },
+  { name: "Gemini", logo: "/tech/gemini.svg", tone: "gemini" },
+  { name: "LangChain", logo: "/tech/langchain.svg", tone: "langchain" },
+  {
+    name: "Hugging Face",
+    logo: "/tech/hugging-face.svg",
+    tone: "huggingface",
+  },
 ];
 
 export function CodeProfileCard() {
@@ -18,28 +20,32 @@ export function CodeProfileCard() {
             <i />
             <i />
           </span>
-          <span>developer.ts</span>
-          <span className="code-window__status">TypeScript</span>
+          <span>ai_engineer.py</span>
+          <span className="code-window__status">Python</span>
         </div>
-        <div className="code-window__body" role="img" aria-label="TypeScript profile for Muhammad Bilal">
+        <div
+          className="code-window__body"
+          role="img"
+          aria-label="Generative AI Engineer profile for Muhammad Bilal"
+        >
           <ol className="code-lines">
             <li>
-              <span className="syntax-keyword">const</span> developer = {"{"}
+              engineer = {"{"}
             </li>
             <li>
               &nbsp;&nbsp;name: <span className="syntax-string">&apos;Muhammad Bilal&apos;</span>,
             </li>
             <li>
               &nbsp;&nbsp;role:{" "}
-              <span className="syntax-string">&apos;Frontend-focused full-stack developer&apos;</span>,
+              <span className="syntax-string">&apos;Generative AI Engineer&apos;</span>,
             </li>
             <li>
               &nbsp;&nbsp;focus: [
             </li>
             <li>
-              &nbsp;&nbsp;&nbsp;&nbsp;<span className="syntax-string">&apos;Product UI&apos;</span>,{" "}
-              <span className="syntax-string">&apos;Responsive web&apos;</span>,{" "}
-              <span className="syntax-string">&apos;APIs&apos;</span>
+              &nbsp;&nbsp;&nbsp;&nbsp;<span className="syntax-string">&apos;LLM apps&apos;</span>,{" "}
+              <span className="syntax-string">&apos;Retrieval&apos;</span>,{" "}
+              <span className="syntax-string">&apos;AI products&apos;</span>
             </li>
             <li>
               &nbsp;&nbsp;],
@@ -48,20 +54,20 @@ export function CodeProfileCard() {
               &nbsp;&nbsp;stack: {"{"}
             </li>
             <li>
-              &nbsp;&nbsp;&nbsp;&nbsp;frontend: [
-              <span className="syntax-string">&apos;React&apos;</span>,{" "}
-              <span className="syntax-string">&apos;Next.js&apos;</span>,{" "}
-              <span className="syntax-string">&apos;TypeScript&apos;</span>],
+              &nbsp;&nbsp;&nbsp;&nbsp;models: [
+              <span className="syntax-string">&apos;OpenAI&apos;</span>,{" "}
+              <span className="syntax-string">&apos;Gemini&apos;</span>,{" "}
+              <span className="syntax-string">&apos;Llama 2&apos;</span>],
             </li>
             <li>
-              &nbsp;&nbsp;&nbsp;&nbsp;backend: [
-              <span className="syntax-string">&apos;Node.js&apos;</span>,{" "}
-              <span className="syntax-string">&apos;FastAPI&apos;</span>],
+              &nbsp;&nbsp;&nbsp;&nbsp;orchestration: [
+              <span className="syntax-string">&apos;LangChain&apos;</span>,{" "}
+              <span className="syntax-string">&apos;Hugging Face&apos;</span>],
             </li>
             <li>
-              &nbsp;&nbsp;&nbsp;&nbsp;data: [
-              <span className="syntax-string">&apos;MongoDB&apos;</span>,{" "}
-              <span className="syntax-string">&apos;PostgreSQL&apos;</span>]
+              &nbsp;&nbsp;&nbsp;&nbsp;vectors: [
+              <span className="syntax-string">&apos;Pinecone&apos;</span>,{" "}
+              <span className="syntax-string">&apos;ChromaDB&apos;</span>]
             </li>
             <li>
               &nbsp;&nbsp;{"}"},
@@ -70,7 +76,7 @@ export function CodeProfileCard() {
               &nbsp;&nbsp;status:{" "}
               <span className="syntax-string">&apos;Open to opportunities&apos;</span>
             </li>
-            <li>{"}"};</li>
+            <li>{"}"}</li>
           </ol>
         </div>
       </div>
@@ -78,9 +84,13 @@ export function CodeProfileCard() {
       <aside className="stack-card" aria-label="Core technology stack">
         <p>Core stack</p>
         <ul>
-          {stack.map(({ name, icon: Icon }) => (
-            <li key={name}>
-              <Icon aria-hidden="true" size={17} strokeWidth={1.6} />
+          {stack.map(({ name, logo, tone }, index) => (
+            <li
+              key={name}
+              data-tone={tone}
+              style={{ "--logo-delay": `${index * 180}ms` } as CSSProperties}
+            >
+              <img aria-hidden="true" alt="" height="24" src={logo} width="24" />
               <span>{name}</span>
             </li>
           ))}
@@ -89,3 +99,4 @@ export function CodeProfileCard() {
     </div>
   );
 }
+import type { CSSProperties } from "react";

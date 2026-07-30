@@ -3,7 +3,7 @@ import { ImageResponse } from "next/og";
 import { siteConfig } from "@/content/site";
 
 export const alt =
-  "Muhammad Bilal — Frontend-focused full-stack developer portfolio";
+  "Muhammad Bilal — Generative AI Engineer portfolio";
 export const size = {
   width: 1200,
   height: 630,
@@ -100,8 +100,8 @@ export default function OpenGraphImage() {
                 lineHeight: 1.3,
               }}
             >
-              Frontend-focused full-stack developer building clear, responsive
-              product interfaces.
+              Generative AI Engineer focused on LLM applications, retrieval,
+              and full-stack AI products.
             </div>
           </div>
 

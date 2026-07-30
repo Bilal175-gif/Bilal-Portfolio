@@ -1,20 +1,21 @@
 import {
-  Braces,
-  CodeXml,
+  Blocks,
+  Bot,
+  BrainCircuit,
   Database,
-  GitBranch,
-  PanelsTopLeft,
+  Network,
+  Sparkles,
   Workflow,
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 
 const icons: Record<string, LucideIcon> = {
-  languages: CodeXml,
-  frontend: PanelsTopLeft,
-  backend: Braces,
-  databases: Database,
-  tools: GitBranch,
-  workflows: Workflow,
+  "genai-foundations": Sparkles,
+  "llm-models": Bot,
+  orchestration: Workflow,
+  retrieval: Database,
+  "ai-application": BrainCircuit,
+  "supporting-stack": Blocks,
 };
 
 export function SkillGroupCard({
@@ -27,15 +28,7 @@ export function SkillGroupCard({
     skills: readonly string[];
   };
 }) {
-  const iconKey =
-    group.id === "backend-and-apis"
-      ? "backend"
-      : group.id === "developer-tools"
-        ? "tools"
-        : group.id === "product-workflows"
-          ? "workflows"
-          : group.id;
-  const Icon = icons[iconKey] ?? CodeXml;
+  const Icon = icons[group.id] ?? Network;
 
   return (
     <article className="skill-card">

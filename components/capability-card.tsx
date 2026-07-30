@@ -1,10 +1,10 @@
-import { Blocks, MonitorSmartphone, ScanSearch } from "lucide-react";
+import { Blocks, BrainCircuit, DatabaseZap } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 
 const icons: Record<string, LucideIcon> = {
-  frontend: MonitorSmartphone,
-  fullstack: Blocks,
-  usability: ScanSearch,
+  genai: BrainCircuit,
+  retrieval: DatabaseZap,
+  product: Blocks,
 };
 
 export function CapabilityCard({
