@@ -538,6 +538,11 @@ p {
   padding-block: clamp(3.75rem, 6vw, 6rem);
 }
 
+.direct-page-section {
+  min-height: calc(100svh - 77px);
+  padding-top: clamp(3rem, 6vw, 5rem);
+}
+
 .section-block + .section-block {
   border-top: 1px solid var(--border-soft);
 }

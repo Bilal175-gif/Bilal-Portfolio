@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 
 import { ProjectCard } from "@/components/project-card";
-import { PageIntro } from "@/components/ui";
 import { projects } from "@/content/site";
 
 const description =
@@ -26,27 +25,18 @@ export const metadata: Metadata = {
 
 export default function ProjectsPage() {
   return (
-    <>
-      <PageIntro
-        eyebrow="Selected projects"
-        title="The product foundation behind useful AI systems."
-        description="These shipped platforms demonstrate responsive interfaces, API workflows, dashboard design, and connected systems—the engineering layer required to deliver complete Generative AI products."
-        tags={[
-          "AI product interfaces",
-          "Connected API workflows",
-          "Editorial systems",
-          "Live project links",
-        ]}
-      />
-
-      <section className="section-block">
-        <div className="container project-grid">
-          {projects.map((project, index) => (
-            <ProjectCard project={project} index={index} key={project.slug} />
-          ))}
-        </div>
-      </section>
-
-    </>
+    <section
+      aria-labelledby="projects-page-title"
+      className="section-block direct-page-section"
+    >
+      <h1 className="visually-hidden" id="projects-page-title">
+        Selected projects
+      </h1>
+      <div className="container project-grid">
+        {projects.map((project, index) => (
+          <ProjectCard project={project} index={index} key={project.slug} />
+        ))}
+      </div>
+    </section>
   );
 }
