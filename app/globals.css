@@ -146,6 +146,16 @@ p {
   outline-offset: 4px;
 }
 
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
 .skip-link {
   position: fixed;
   z-index: 1000;
@@ -1695,8 +1705,10 @@ p {
 
 .skills-section {
   position: relative;
+  min-height: calc(100svh - 77px);
   overflow: hidden;
-  padding-top: clamp(3.25rem, 5vw, 5rem);
+  background: #030114;
+  padding-block: 2.9rem 6rem;
 }
 
 .skills-section::before {
@@ -1715,27 +1727,11 @@ p {
 }
 
 .container.skills-container {
-  width: min(1420px, calc(100% - 2rem));
+  width: min(1720px, calc(100% - 2rem));
 }
 
 .skills-explorer {
-  display: grid;
-  gap: 1.5rem;
-}
-
-.skills-explorer__hint {
-  display: inline-flex;
-  width: fit-content;
-  align-items: center;
-  gap: 0.55rem;
-  border: 1px solid rgba(255, 209, 47, 0.22);
-  border-radius: 999px;
-  background: rgba(255, 209, 47, 0.055);
-  color: #ffe781;
-  font-family: var(--font-mono);
-  font-size: 0.7rem;
-  letter-spacing: 0.02em;
-  padding: 0.48rem 0.75rem;
+  min-width: 0;
 }
 
 .skills-explorer__layout {
@@ -1744,7 +1740,7 @@ p {
 
 .skill-picker {
   display: grid;
-  gap: 1.25rem;
+  gap: 1.7rem;
 }
 
 .skill-tile {
@@ -1753,26 +1749,24 @@ p {
   position: relative;
   display: flex;
   min-width: 0;
-  min-height: 390px;
+  min-height: 438px;
   cursor: pointer;
   flex-direction: column;
   align-items: stretch;
   overflow: hidden;
   border: 2px solid rgba(255, 173, 24, 0.88);
-  border-radius: 21px;
-  background:
-    radial-gradient(circle at 18% 14%, var(--skill-glow), transparent 13rem),
-    linear-gradient(145deg, rgba(255, 255, 255, 0.035), transparent 46%),
-    #11152e;
+  border-radius: 19px;
+  background: #171a35;
   color: var(--foreground);
-  padding: clamp(1.45rem, 2.2vw, 2rem);
+  padding: 2.5rem 1.7rem 2.25rem;
   text-align: left;
   opacity: 0;
   animation: skillTileIn 420ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
   animation-delay: calc(var(--skill-index) * 34ms);
   box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.045),
-    0 14px 30px rgba(255, 116, 24, 0.1);
+    inset 0 1px 0 rgba(255, 255, 255, 0.035),
+    0 12px 22px rgba(0, 0, 0, 0.24),
+    0 10px 24px rgba(255, 87, 31, 0.13);
   transition:
     transform 180ms ease,
     border-color 180ms ease,
@@ -1781,14 +1775,13 @@ p {
 
 .skill-tile::before {
   position: absolute;
-  right: -5rem;
-  bottom: -7rem;
-  width: 15rem;
-  height: 15rem;
-  border-radius: 999px;
-  background: radial-gradient(circle, var(--skill-glow), transparent 68%);
+  right: 18%;
+  bottom: -1px;
+  left: 18%;
+  height: 3px;
+  background: #ff6a20;
+  box-shadow: 0 5px 24px 8px rgba(255, 82, 31, 0.2);
   content: "";
-  opacity: 0.32;
   pointer-events: none;
 }
 
@@ -1808,12 +1801,11 @@ p {
 }
 
 .skill-tile:hover {
-  transform: translateY(-5px);
+  transform: translateY(-3px);
   border-color: #ffc23d;
   box-shadow:
     0 18px 42px rgba(0, 0, 0, 0.3),
-    0 0 24px rgba(255, 153, 25, 0.22),
-    0 0 38px color-mix(in srgb, var(--skill-glow) 64%, transparent);
+    0 8px 30px rgba(255, 82, 31, 0.2);
 }
 
 .skill-tile:hover::after {
@@ -1826,7 +1818,7 @@ p {
 
 .skill-tile__top {
   display: flex;
-  min-height: 112px;
+  min-height: 138px;
   align-items: flex-start;
   justify-content: space-between;
   gap: 1rem;
@@ -1848,16 +1840,16 @@ p {
 }
 
 .skill-tile__logo {
-  width: 108px;
-  height: 108px;
+  width: 136px;
+  height: 136px;
   transform: perspective(240px) rotateX(2deg) rotateY(-4deg);
-  border-width: 2px;
-  border-radius: 25px;
+  border: 0;
+  border-radius: 30px;
   box-shadow:
-    inset 0 2px 0 rgba(255, 255, 255, 0.12),
-    inset 0 -8px 18px rgba(0, 0, 0, 0.22),
-    0 12px 22px rgba(0, 0, 0, 0.26),
-    0 0 30px var(--skill-glow);
+    inset 0 2px 0 rgba(255, 255, 255, 0.14),
+    inset 0 -10px 22px rgba(0, 0, 0, 0.2),
+    0 12px 20px rgba(0, 0, 0, 0.24),
+    0 0 24px var(--skill-glow);
 }
 
 .skill-tile__logo img,
@@ -1885,9 +1877,9 @@ p {
   border-radius: 999px;
   background: color-mix(in srgb, var(--skill-color) 10%, #121631);
   color: var(--muted-strong);
-  font-size: 0.72rem;
+  font-size: 0.78rem;
   line-height: 1.25;
-  padding: 0.48rem 0.72rem;
+  padding: 0.48rem 0.85rem;
   text-align: center;
 }
 
@@ -1895,31 +1887,21 @@ p {
   display: flex;
   min-width: 0;
   flex-direction: column;
-  margin-top: 1.5rem;
-}
-
-.skill-tile__copy small {
-  color: var(--skill-color);
-  font-family: var(--font-mono);
-  font-size: 0.65rem;
-  font-weight: 750;
-  letter-spacing: 0.095em;
-  text-transform: uppercase;
+  margin-top: 1.65rem;
 }
 
 .skill-tile__copy strong {
-  margin-top: 0.45rem;
-  font-size: clamp(1.45rem, 2vw, 1.8rem);
+  font-size: clamp(1.65rem, 2vw, 2rem);
   letter-spacing: -0.035em;
   line-height: 1.15;
 }
 
 .skill-tile__copy > span {
   display: -webkit-box;
-  margin-top: 0.85rem;
-  color: var(--muted);
-  font-size: 0.94rem;
-  line-height: 1.65;
+  margin-top: 1rem;
+  color: #c9cee3;
+  font-size: 1.2rem;
+  line-height: 1.5;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
   overflow: hidden;
@@ -1932,9 +1914,9 @@ p {
   gap: 0.55rem;
   margin-top: auto;
   color: #49baff;
-  font-size: 0.94rem;
+  font-size: 1.16rem;
   font-weight: 750;
-  padding-top: 1.35rem;
+  padding-top: 1.25rem;
   transition:
     color 160ms ease,
     gap 160ms ease;
@@ -2718,6 +2700,7 @@ p {
 @media (min-width: 1040px) {
   .skill-picker {
     grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 2rem;
   }
 
   .site-header__inner {
@@ -2802,11 +2785,12 @@ p {
   }
 
   .container.skills-container {
-    width: min(1420px, calc(100% - 4rem));
+    width: min(1720px, calc(100% - 5rem));
   }
 
   .skill-picker {
     grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 2.5rem;
   }
 
   .project-visual {

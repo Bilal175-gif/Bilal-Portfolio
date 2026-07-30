@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 
 import { SkillsExplorer } from "@/components/skills-explorer";
-import { PageIntro } from "@/components/ui";
 import { skills } from "@/content/site";
 
 const description =
@@ -26,24 +25,13 @@ export const metadata: Metadata = {
 
 export default function SkillsPage() {
   return (
-    <>
-      <PageIntro
-        eyebrow="Skills / Technology stack"
-        title="The tools behind the products I build."
-        description="A practical mix of AI engineering and full-stack technology. Select any skill to see what it does, where it fits, and how I use it in product work."
-        tags={[
-          "AI engineering",
-          "Frontend systems",
-          "Backend APIs",
-          "Production delivery",
-        ]}
-      />
-
-      <section className="section-block skills-section">
-        <div className="container skills-container">
-          <SkillsExplorer skills={skills} />
-        </div>
-      </section>
-    </>
+    <section aria-labelledby="skills-page-title" className="skills-section">
+      <h1 className="visually-hidden" id="skills-page-title">
+        Technology skills
+      </h1>
+      <div className="container skills-container">
+        <SkillsExplorer skills={skills} />
+      </div>
+    </section>
   );
 }

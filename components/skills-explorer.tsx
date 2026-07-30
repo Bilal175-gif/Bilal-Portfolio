@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowUpRight, Check, MousePointer2, X } from "lucide-react";
+import { ArrowUpRight, Check, X } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import type { CSSProperties } from "react";
 
@@ -58,11 +58,6 @@ export function SkillsExplorer({ skills }: { skills: readonly Skill[] }) {
 
   return (
     <div className="skills-explorer">
-      <div className="skills-explorer__hint">
-        <MousePointer2 aria-hidden="true" size={16} />
-        <span>Select any skill to explore how it fits into my work.</span>
-      </div>
-
       <div className="skills-explorer__layout">
         <div className="skill-picker" aria-label="Technology skills">
           {skills.map((skill, index) => {
@@ -94,15 +89,16 @@ export function SkillsExplorer({ skills }: { skills: readonly Skill[] }) {
                     {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img alt="" height="64" src={skill.logo} width="64" />
                   </span>
-                  <span className="skill-tile__badge">{skill.status}</span>
+                  {index < 2 ? (
+                    <span className="skill-tile__badge">{skill.status}</span>
+                  ) : null}
                 </span>
                 <span className="skill-tile__copy">
-                  <small>{skill.category}</small>
                   <strong>{skill.name}</strong>
                   <span>{skill.summary}</span>
                 </span>
                 <span className="skill-tile__action">
-                  Explore skill
+                  Check it now
                   <ArrowUpRight aria-hidden="true" size={18} strokeWidth={1.9} />
                 </span>
               </button>
