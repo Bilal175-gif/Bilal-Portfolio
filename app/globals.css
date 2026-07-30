@@ -979,6 +979,20 @@ p {
   mask-image: radial-gradient(circle at center, black, transparent 82%);
 }
 
+.project-visual--artwork {
+  background: #050300;
+  padding: 0;
+}
+
+.project-visual--artwork::before {
+  display: none;
+}
+
+.project-visual__artwork {
+  object-fit: cover;
+  object-position: center;
+}
+
 .project-visual__toolbar {
   position: relative;
   z-index: 2;
@@ -2282,6 +2296,10 @@ p {
   padding: clamp(0.8rem, 2vw, 1.5rem) clamp(0.8rem, 2vw, 1.5rem) 0;
 }
 
+.case-hero__visual .project-visual--artwork {
+  padding: 0;
+}
+
 .case-hero__visual .launchmind-ui,
 .case-hero__visual .vivid-ui {
   height: calc(min(540px, 56vw) - 54px);
@@ -2543,6 +2561,13 @@ p {
 
   .flow-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 899px) {
+  .project-card .project-visual--artwork {
+    min-height: 0;
+    aspect-ratio: 1672 / 941;
   }
 }
 

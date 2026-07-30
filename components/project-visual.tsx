@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 type ProjectVisualProps = {
   slug: string;
   title: string;
@@ -7,51 +9,15 @@ export function ProjectVisual({ slug, title }: ProjectVisualProps) {
   if (slug === "launchmind-ai") {
     return (
       <div
-        className="project-visual project-visual--launchmind"
-        role="img"
-        aria-label={`${title} interface preview`}
+        className="project-visual project-visual--launchmind project-visual--artwork"
       >
-        <div className="project-visual__toolbar" aria-hidden="true">
-          <span className="project-visual__brand">LM</span>
-          <span />
-          <i />
-          <i />
-          <i />
-        </div>
-        <div className="launchmind-ui" aria-hidden="true">
-          <div className="launchmind-ui__sidebar">
-            <span className="is-active" />
-            <span />
-            <span />
-            <span />
-          </div>
-          <div className="launchmind-ui__workspace">
-            <div className="ui-kicker">Your startup workspace</div>
-            <div className="ui-title" />
-            <div className="ui-copy" />
-            <div className="ui-prompt">
-              <span>Turn your idea into a focused plan</span>
-              <i>→</i>
-            </div>
-            <div className="ui-grid">
-              <div>
-                <b>01</b>
-                <span />
-                <span />
-              </div>
-              <div>
-                <b>02</b>
-                <span />
-                <span />
-              </div>
-              <div>
-                <b>03</b>
-                <span />
-                <span />
-              </div>
-            </div>
-          </div>
-        </div>
+        <Image
+          alt={`${title} dashboard showing saved startup analyses and planning tools`}
+          className="project-visual__artwork"
+          fill
+          sizes="(max-width: 899px) calc(100vw - 2rem), (max-width: 1279px) 50vw, 720px"
+          src="/launchmind-ai-dashboard.png"
+        />
       </div>
     );
   }
