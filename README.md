@@ -1,28 +1,47 @@
-# Bilal Portfolio
+# Muhammad Bilal — Portfolio
 
-Modern, responsive business website for Zepra Tech built with Vue 3, JavaScript, Vue Router, and custom CSS.
+Recruiter-first developer portfolio for [bilalgilani.me](https://bilalgilani.me), built with the Next.js App Router, React, TypeScript, and custom CSS.
 
-## Features
+## What is included
 
-- Vue 3 + Vue Router
-- Component-based structure
-- Responsive sticky navbar with active links and mobile menu
-- Premium dark/light visual system with gradients and glass cards
-- Home, About, Services, Work, and Contact routes
-- Smooth scrolling, section reveal animations, and scroll-to-top button
-- Portfolio filtering, animated counters, FAQ accordion
-- Contact form and newsletter form validation
-- SEO-friendly page titles and descriptions
+- Dark navy and mint visual system with static glow treatment
+- Responsive, accessible desktop and mobile navigation
+- Typed portfolio content in `content/site.ts`
+- Home, projects, about, experience, skills, and contact pages
+- LaunchMind AI and Vivid Horizon case studies
+- Permanent redirects from `/work` to `/projects` and `/learning` to `/skills`
+- Page metadata, Open Graph image, JSON-LD, sitemap, robots, manifest, and custom 404
+- Direct email, phone, LinkedIn, GitHub, and CV links
+- Supplied CV at `/Muhammad-Bilal-CV.pdf`
 
-## Project Setup
+## Local development
 
 ```bash
-npm install
+npm ci
 npm run dev
 ```
 
-## Build
+Open [http://localhost:3000](http://localhost:3000).
+
+## Verification
+
+```bash
+npm run lint
+npm run type-check
+npm run build
+```
+
+Run all three checks with:
+
+```bash
+npm run check
+```
+
+## Production
 
 ```bash
 npm run build
+npm run start
 ```
+
+The current production surface is the Next.js application under `app/`. Historical Vue and Express source remains in `src/` and `server/` for reference, but it is not imported, bundled, or required by the portfolio runtime.

@@ -1,5 +1,5 @@
 {
-  "name": "zepra-tech",
+  "name": "bilal-portfolio",
   "private": true,
   "version": "1.0.0",
   "type": "module",
@@ -7,44 +7,22 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "legacy:dev": "vite",
-    "legacy:build": "vite build",
-    "legacy:preview": "vite preview",
-    "client:dev": "vite",
-    "server": "node server/index.js",
+    "lint": "oxlint app components content next.config.mjs --deny-warnings",
+    "type-check": "tsc --noEmit",
+    "check": "npm run lint && npm run type-check && npm run build",
     "preview": "next start"
   },
   "dependencies": {
-    "@gsap/react": "^2.1.2",
-    "@react-three/drei": "^10.7.7",
-    "@react-three/fiber": "^9.5.0",
-    "@tailwindcss/postcss": "^4.2.2",
-    "@tailwindcss/vite": "^4.2.2",
-    "@vueuse/core": "^14.2.1",
-    "class-variance-authority": "^0.7.1",
-    "clsx": "^2.1.1",
-    "cors": "^2.8.6",
-    "dotenv": "^17.3.1",
-    "express": "^5.2.1",
-    "gsap": "^3.14.2",
-    "lucide-react": "^1.7.0",
-    "lucide-vue-next": "^1.0.0",
-    "mongoose": "^9.3.3",
-    "next": "^16.2.1",
-    "nodemailer": "^8.0.4",
-    "react": "^19.2.4",
-    "react-dom": "^19.2.4",
-    "reka-ui": "^2.9.2",
-    "shadcn-vue": "^2.4.3",
-    "tailwind-merge": "^3.5.0",
-    "tailwindcss": "^4.2.2",
-    "tailwindcss-animate": "^1.0.7",
-    "three": "^0.183.2",
-    "vue": "^3.5.13",
-    "vue-router": "^4.5.1"
+    "lucide-react": "1.7.0",
+    "next": "16.2.1",
+    "react": "19.2.4",
+    "react-dom": "19.2.4"
   },
   "devDependencies": {
-    "@vitejs/plugin-vue": "^5.2.3",
-    "vite": "^5.4.12"
+    "@types/node": "24.10.9",
+    "@types/react": "19.2.14",
+    "@types/react-dom": "19.2.3",
+    "oxlint": "1.71.0",
+    "typescript": "5.9.3"
   }
 }

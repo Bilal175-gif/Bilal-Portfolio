@@ -5,4 +5,5 @@ dist/
 out/
 .env
 *.log
+*.tsbuildinfo
 vite.config.js.timestamp-*.mjs
