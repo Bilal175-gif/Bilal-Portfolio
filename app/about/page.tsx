@@ -33,16 +33,16 @@ export default function AboutPage() {
         <div className="portrait-frame">
           <div className="portrait-frame__glow" aria-hidden="true" />
           <Image
-            alt="Muhammad Bilal at SOFTEC 2026"
+            alt="Portrait of Muhammad Bilal"
             className="portrait-frame__image"
-            height={1600}
+            height={1448}
             priority
             sizes="(max-width: 899px) calc(100vw - 2rem), 46vw"
-            src="/muhammad-bilal-softec-2026.jpg"
-            width={1200}
+            src="/muhammad-bilal-portrait-graded.png"
+            width={1086}
           />
           <span className="portrait-frame__caption">
-            SOFTEC&apos;26 · Lahore
+            Muhammad Bilal · Lahore
           </span>
         </div>
 
