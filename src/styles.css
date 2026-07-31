@@ -419,17 +419,23 @@ p {
 }
 
 .brand__mark,
-.brand-mark {
+.brand-mark,
+.brand__signal {
+  position: relative;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   width: 2.75rem;
   height: 2.75rem;
-  border-radius: 18px;
-  background: linear-gradient(135deg, var(--accent), var(--accent-strong));
-  color: #fff;
-  font-weight: 700;
-  box-shadow: 0 14px 26px rgba(60, 159, 255, 0.22);
+  flex: 0 0 2.75rem;
+  border-radius: 15px;
+  border: 1px solid rgba(139, 92, 246, 0.72);
+  background:
+    radial-gradient(circle at 28% 20%, rgba(68, 199, 255, 0.25), transparent 45%),
+    linear-gradient(145deg, #0e1730, #080d1e);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.06),
+    0 0 28px rgba(103, 83, 255, 0.14);
 }
 
 .brand__logo {
@@ -441,9 +447,41 @@ p {
   box-shadow: 0 14px 26px rgba(60, 159, 255, 0.18);
 }
 
-.brand__logo--footer {
+.brand__logo--footer,
+.brand__signal--footer {
   width: 3.5rem;
   height: 3.5rem;
+  flex-basis: 3.5rem;
+}
+
+.brand__signal i {
+  position: absolute;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 999px;
+  background: var(--accent);
+  box-shadow: 0 0 12px currentColor;
+}
+
+.brand__signal i:nth-child(1) {
+  transform: translate(-0.38rem, 0.25rem);
+  color: var(--accent);
+}
+
+.brand__signal i:nth-child(2) {
+  width: 0.44rem;
+  height: 0.44rem;
+  transform: translate(0.38rem, 0.25rem);
+  background: var(--accent-strong);
+  color: var(--accent-strong);
+}
+
+.brand__signal i:nth-child(3) {
+  width: 0.38rem;
+  height: 0.38rem;
+  transform: translateY(-0.44rem);
+  background: #ffd12f;
+  color: #ffd12f;
 }
 
 .brand__meta {

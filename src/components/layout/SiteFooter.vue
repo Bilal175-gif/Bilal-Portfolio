@@ -3,7 +3,6 @@ import { RouterLink } from 'vue-router';
 import IconSymbol from '@/components/ui/IconSymbol.vue';
 import { Badge } from '@/components/ui/badge';
 import { company, navLinks, services, socialLinks } from '@/data/siteContent';
-import logoImage from '@/assets/logo.png';
 
 const year = new Date().getFullYear();
 </script>
@@ -13,7 +12,11 @@ const year = new Date().getFullYear();
     <div class="container site-footer__grid">
       <div class="site-footer__brand">
         <div class="brand brand--footer">
-          <img :src="logoImage" alt="Zepra Tech logo" class="brand__logo brand__logo--footer" />
+          <span class="brand__signal brand__signal--footer" aria-hidden="true">
+            <i />
+            <i />
+            <i />
+          </span>
           <span class="brand__meta">
             <strong>{{ company.name }}</strong>
             <small>{{ company.tagline }}</small>
