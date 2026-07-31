@@ -57,11 +57,6 @@ export default function HomePage() {
                 {siteConfig.hero.secondaryCta.label}
               </ButtonLink>
             </div>
-            <ul className="hero-facts">
-              <li>{siteConfig.profile.location}</li>
-              <li>{siteConfig.profile.availability[0]}</li>
-              <li>{siteConfig.profile.availability[1]}</li>
-            </ul>
           </div>
 
           <CodeProfileCard />

@@ -174,8 +174,8 @@ export const siteConfig = {
       href: "/projects",
     },
     secondaryCta: {
-      label: "Contact me",
-      href: "/contact",
+      label: "View skills",
+      href: "/skills",
     },
     codeProfile: {
       name: "Muhammad Bilal",
@@ -243,9 +243,7 @@ export const navigation = [
   { label: "Home", href: "/" },
   { label: "Projects", href: "/projects" },
   { label: "About", href: "/about" },
-  { label: "Experience", href: "/experience" },
   { label: "Skills", href: "/skills" },
-  { label: "Contact", href: "/contact" },
 ] as const satisfies readonly NavigationItem[];
 
 export const homeHighlights = [

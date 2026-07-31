@@ -58,7 +58,7 @@ export function SiteHeader({ navigation, site }: SiteHeaderProps) {
     <header className="site-header">
       <div className="container site-header__inner">
         <Link className="site-header__brand" href="/" aria-label={`${site.name}, home`}>
-          <BrandMark name={site.name} title={site.shortTitle} />
+          <BrandMark compact name={site.name} title={site.shortTitle} />
         </Link>
 
         <nav className="desktop-nav" aria-label="Primary navigation">

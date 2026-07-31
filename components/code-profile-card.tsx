@@ -1,3 +1,5 @@
+import type { CSSProperties } from "react";
+
 const stack = [
   { name: "Python", logo: "/tech/python.svg", tone: "python" },
   { name: "Gemini", logo: "/tech/gemini.svg", tone: "gemini" },
@@ -99,4 +101,3 @@ export function CodeProfileCard() {
     </div>
   );
 }
-import type { CSSProperties } from "react";
