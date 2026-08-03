@@ -1,7 +1,6 @@
 import { ShieldCheck } from "lucide-react";
 
 import { AutomationIcon } from "@/components/n8n/automation-icon";
-import { WorkflowCarousel } from "@/components/n8n/carousels";
 import { N8nSectionHeading } from "@/components/n8n/n8n-ui";
 import { WorkflowDemo } from "@/components/n8n/workflow-demo";
 import { AutomationArchitectureDiagram } from "@/components/n8n/workflow-graphics";
@@ -12,7 +11,6 @@ import {
   integrations,
   workflowDemoCases,
   workflowDemoSteps,
-  workflowSlides,
 } from "@/content/n8n";
 
 export function InteractiveWorkflowPreview() {
@@ -26,22 +24,6 @@ export function InteractiveWorkflowPreview() {
           description="Choose a sample request and replay a predefined AI lead-qualification flow. The preview demonstrates processing states and outputs locally; it does not call a live model."
         />
         <WorkflowDemo cases={workflowDemoCases} steps={workflowDemoSteps} />
-      </div>
-    </section>
-  );
-}
-
-export function WorkflowLibrary() {
-  return (
-    <section className="n8n-section n8n-section--tinted" aria-labelledby="workflow-library-title">
-      <div className="n8n-shell">
-        <N8nSectionHeading
-          id="workflow-library-title"
-          eyebrow="Workflow library"
-          title="Connected automation patterns for everyday operations."
-          description="Every example is adapted to the client's systems, rules, and approval requirements before it becomes an implementation."
-        />
-        <WorkflowCarousel slides={workflowSlides} />
       </div>
     </section>
   );

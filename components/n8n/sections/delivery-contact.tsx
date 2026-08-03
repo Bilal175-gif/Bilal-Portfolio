@@ -9,14 +9,11 @@ import {
 } from "lucide-react";
 
 import { AutomationFaq } from "@/components/n8n/automation-faq";
-import { ExpectationsCarousel } from "@/components/n8n/carousels";
 import { N8nButtonLink, N8nEyebrow, N8nSectionHeading } from "@/components/n8n/n8n-ui";
 import {
   automationContact,
   clientDeliverables,
   clientDeliverablesNote,
-  clientExpectations,
-  engagementOptions,
   faqItems,
 } from "@/content/n8n";
 
@@ -60,57 +57,6 @@ export function ClientDelivery() {
             <div><strong>Scope-dependent delivery</strong><p>Credentials, infrastructure, licensing, and ongoing support are agreed for each project.</p></div>
           </div>
         </div>
-      </div>
-    </section>
-  );
-}
-
-export function EngagementOptions() {
-  return (
-    <section className="n8n-section n8n-section--tinted" aria-labelledby="engagement-title">
-      <div className="n8n-shell">
-        <N8nSectionHeading
-          id="engagement-title"
-          eyebrow="Ways to work together"
-          title="Choose the level of support your workflow needs."
-          description="Project estimates are tailored after reviewing your process, integrations, data, testing, deployment, and handover requirements."
-        />
-        <div className="n8n-engagement-grid">
-          {engagementOptions.map((option, index) => (
-            <article data-featured={index === 1 ? "true" : undefined} key={option.title}>
-              <div className="n8n-engagement-card__top">
-                <span>0{index + 1}</span>
-                {index === 1 && <small>Defined workflow</small>}
-              </div>
-              <h3>{option.title}</h3>
-              <p>{option.description}</p>
-              <ul>
-                {option.deliverables.map((item) => (
-                  <li key={item}><Check aria-hidden="true" size={13} /> {item}</li>
-                ))}
-              </ul>
-              <N8nButtonLink href={automationContact.estimateHref} variant={index === 1 ? "primary" : "secondary"}>
-                {option.cta}
-              </N8nButtonLink>
-            </article>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
-export function ClientExpectations() {
-  return (
-    <section className="n8n-section" aria-labelledby="expectations-title">
-      <div className="n8n-shell">
-        <N8nSectionHeading
-          id="expectations-title"
-          eyebrow="What clients can expect"
-          title="The working standards behind every engagement."
-          description="These service commitments describe our approach to planning, development, testing, and handover. They are not presented as client reviews."
-        />
-        <ExpectationsCarousel items={clientExpectations} />
       </div>
     </section>
   );

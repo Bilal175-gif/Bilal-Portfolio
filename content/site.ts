@@ -243,7 +243,6 @@ export const navigation = [
   { label: "Home", href: "/" },
   { label: "Projects", href: "/projects" },
   { label: "About", href: "/about" },
-  { label: "Skills", href: "/skills" },
 ] as const satisfies readonly NavigationItem[];
 
 export const homeHighlights = [

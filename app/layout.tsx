@@ -106,7 +106,7 @@ export default function RootLayout({
         <div className="site-ambient" aria-hidden="true" />
         <SiteHeader navigation={navigation} site={siteConfig} />
         <main id="main-content">{children}</main>
-        <SiteFooter navigation={navigation} site={siteConfig} />
+        <SiteFooter site={siteConfig} />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{

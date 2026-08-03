@@ -2,16 +2,10 @@
 
 import {
   ArrowRight,
-  ArrowUpRight,
-  Bot,
-  CodeXml,
-  ContactRound,
   Mail,
   Menu,
-  Network,
   X,
 } from "lucide-react";
-import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 
 type N8nNavigationItem = {
@@ -22,17 +16,7 @@ type N8nNavigationItem = {
 type N8nHeaderProps = {
   navigation: readonly N8nNavigationItem[];
   site: {
-    name: string;
     email: string;
-  };
-};
-
-type N8nFooterProps = {
-  site: {
-    name: string;
-    email: string;
-    linkedin: string;
-    github: string;
   };
 };
 
@@ -136,28 +120,12 @@ export function N8nHeader({ navigation, site }: N8nHeaderProps) {
       data-scrolled={isScrolled ? "true" : "false"}
     >
       <div className="n8n-header__inner">
-        <Link
-          className="n8n-header__brand"
-          href="/"
-          prefetch={false}
-          aria-label={`${site.name}, main portfolio`}
-        >
-          <span className="n8n-header__brand-mark" aria-hidden="true">
-            <Network size={20} strokeWidth={1.9} />
-            <span className="n8n-header__brand-pulse" />
-          </span>
-          <span className="n8n-header__brand-copy">
-            <strong>{site.name}</strong>
-            <span>Automation systems</span>
-          </span>
-        </Link>
-
         <nav className="n8n-header__desktop-nav" aria-label="Automation page sections">
           {navigation.map((item) => {
             const isCurrent = activeHref === item.href;
 
             return (
-              <Link
+              <a
                 className="n8n-header__nav-link"
                 data-current={isCurrent ? "true" : undefined}
                 href={item.href}
@@ -166,7 +134,7 @@ export function N8nHeader({ navigation, site }: N8nHeaderProps) {
                 onClick={() => selectSection(item.href)}
               >
                 {item.label}
-              </Link>
+              </a>
             );
           })}
         </nav>
@@ -176,10 +144,10 @@ export function N8nHeader({ navigation, site }: N8nHeaderProps) {
             <Mail aria-hidden="true" size={16} strokeWidth={1.9} />
             <span>Project details</span>
           </a>
-          <Link className="n8n-header__cta" href="#contact" onClick={() => selectSection("#contact")}>
+          <a className="n8n-header__cta" href="#contact" onClick={() => selectSection("#contact")}>
             Build my automation
             <ArrowRight aria-hidden="true" size={16} strokeWidth={1.9} />
-          </Link>
+          </a>
         </div>
 
         <button
@@ -205,7 +173,7 @@ export function N8nHeader({ navigation, site }: N8nHeaderProps) {
             const isCurrent = activeHref === item.href;
 
             return (
-              <Link
+              <a
                 className="n8n-header__mobile-link"
                 data-current={isCurrent ? "true" : undefined}
                 href={item.href}
@@ -216,100 +184,19 @@ export function N8nHeader({ navigation, site }: N8nHeaderProps) {
               >
                 <span>{item.label}</span>
                 <ArrowRight aria-hidden="true" size={16} strokeWidth={1.8} />
-              </Link>
+              </a>
             );
           })}
-          <Link
+          <a
             className="n8n-header__mobile-cta"
             href="#contact"
             onClick={() => selectSection("#contact")}
           >
             Build my automation
             <ArrowRight aria-hidden="true" size={17} strokeWidth={1.9} />
-          </Link>
+          </a>
         </nav>
       </div>
     </header>
-  );
-}
-
-export function N8nFooter({ site }: N8nFooterProps) {
-  const currentYear = new Date().getFullYear();
-
-  return (
-    <footer className="n8n-footer">
-      <div className="n8n-footer__inner">
-        <div className="n8n-footer__lead">
-          <Link
-            className="n8n-footer__brand"
-            href="/"
-            prefetch={false}
-            aria-label={`${site.name}, main portfolio`}
-          >
-            <span className="n8n-footer__brand-mark" aria-hidden="true">
-              <Bot size={22} strokeWidth={1.8} />
-            </span>
-            <span>
-              <strong>{site.name}</strong>
-              <small>AI automation &amp; n8n services</small>
-            </span>
-          </Link>
-          <p className="n8n-footer__summary">
-            Muhammad Bilal and Abdur Rehman plan, build, test, and deliver practical workflow
-            automation for business teams.
-          </p>
-        </div>
-
-        <div className="n8n-footer__column">
-          <h2 className="n8n-footer__heading">Explore</h2>
-          <nav className="n8n-footer__links" aria-label="Automation footer navigation">
-            <Link href="#services">Services</Link>
-            <Link href="#workflows">Workflows</Link>
-            <Link href="#process">Process</Link>
-            <Link href="#team">Team</Link>
-            <Link href="#faq">FAQ</Link>
-            <Link href="/" prefetch={false}>
-              Main portfolio
-              <ArrowUpRight aria-hidden="true" size={14} strokeWidth={1.8} />
-            </Link>
-          </nav>
-        </div>
-
-        <div className="n8n-footer__column">
-          <h2 className="n8n-footer__heading">Start a conversation</h2>
-          <div className="n8n-footer__links">
-            <a href={`mailto:${site.email}`}>
-              <Mail aria-hidden="true" size={15} strokeWidth={1.8} />
-              Email Muhammad Bilal
-            </a>
-            <a
-              href={site.linkedin}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Muhammad Bilal on LinkedIn (opens in a new tab)"
-            >
-              <ContactRound aria-hidden="true" size={15} strokeWidth={1.8} />
-              LinkedIn
-              <ArrowUpRight aria-hidden="true" size={13} />
-            </a>
-            <a
-              href={site.github}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Muhammad Bilal on GitHub (opens in a new tab)"
-            >
-              <CodeXml aria-hidden="true" size={15} strokeWidth={1.8} />
-              GitHub
-              <ArrowUpRight aria-hidden="true" size={13} />
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <div className="n8n-footer__bottom">
-        <p>© {currentYear} {site.name} &amp; Abdur Rehman.</p>
-        <p>AI agents, n8n workflows, API integrations, and internal automation systems.</p>
-      </div>
-    </footer>
   );
 }

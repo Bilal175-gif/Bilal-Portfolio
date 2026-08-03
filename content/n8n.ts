@@ -183,7 +183,6 @@ export const n8nSeo = {
 export const n8nNavigation = [
   { label: "Services", href: "#services" },
   { label: "Solutions", href: "#solutions" },
-  { label: "Process", href: "#process" },
   { label: "Workflows", href: "#workflows" },
   { label: "Team", href: "#team" },
   { label: "FAQ", href: "#faq" },

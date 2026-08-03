@@ -1,6 +1,6 @@
 "use client";
 
-import { Download, Menu, X } from "lucide-react";
+import { ArrowUpRight, Download, Menu, X } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
@@ -84,10 +84,25 @@ export function SiteHeader({ navigation, site }: SiteHeaderProps) {
           })}
         </nav>
 
-        <a className="button button--primary header-cv" href={site.cvPath} download>
-          Download CV
-          <Download aria-hidden="true" size={16} strokeWidth={1.8} />
-        </a>
+        <div className="site-header__actions">
+          <Link
+            className="button button--secondary header-action-button"
+            href="/n8n"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Agency
+            <ArrowUpRight aria-hidden="true" size={16} strokeWidth={1.8} />
+          </Link>
+          <a
+            className="button button--primary header-action-button header-cv"
+            href={site.cvPath}
+            download
+          >
+            Download CV
+            <Download aria-hidden="true" size={16} strokeWidth={1.8} />
+          </a>
+        </div>
 
         <button
           className="menu-button"
@@ -123,6 +138,15 @@ export function SiteHeader({ navigation, site }: SiteHeaderProps) {
               </Link>
             );
           })}
+          <Link
+            className="button button--secondary mobile-nav__agency"
+            href="/n8n"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Agency
+            <ArrowUpRight aria-hidden="true" size={17} />
+          </Link>
           <a className="button button--primary mobile-nav__cv" href={site.cvPath} download>
             Download CV
             <Download aria-hidden="true" size={17} />

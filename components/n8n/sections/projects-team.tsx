@@ -1,15 +1,12 @@
-import { ChevronRight, CircleDot, ExternalLink, Mail, Sparkles } from "lucide-react";
+import { ChevronRight, CircleDot, ExternalLink, Mail } from "lucide-react";
 import Image from "next/image";
 
-import { AutomationIcon } from "@/components/n8n/automation-icon";
 import { N8nSectionHeading } from "@/components/n8n/n8n-ui";
 import { CompactWorkflowChain } from "@/components/n8n/workflow-graphics";
 import {
   automationProjects,
-  processSteps,
   teamMembers,
   teamWorkflow,
-  whyWorkWithUs,
   workflowSlides,
 } from "@/content/n8n";
 
@@ -152,67 +149,6 @@ export function AutomationTeam() {
           <span>How we deliver together</span>
           <CompactWorkflowChain steps={teamWorkflow} accent="blue" ariaLabel="Team delivery workflow" />
         </div>
-      </div>
-    </section>
-  );
-}
-
-export function WhyWorkWithUs() {
-  return (
-    <section className="n8n-section" aria-labelledby="why-title">
-      <div className="n8n-shell n8n-why-layout">
-        <div className="n8n-why-sticky">
-          <N8nSectionHeading
-            id="why-title"
-            eyebrow="Why work with us"
-            title="Built for operation, handover, and future change."
-            description="A useful automation needs more than a happy-path demo. We plan around the real process and make room for control, failure handling, and improvement."
-          />
-          <div className="n8n-why-callout">
-            <Sparkles aria-hidden="true" size={21} />
-            <p>Full-stack capability means workflows can be supported by APIs, databases, and a focused interface when the process needs more than orchestration alone.</p>
-          </div>
-        </div>
-        <div className="n8n-reasons-grid">
-          {whyWorkWithUs.map((reason, index) => (
-            <article key={reason.title}>
-              <span className="n8n-card-number">{String(index + 1).padStart(2, "0")}</span>
-              <AutomationIcon name={reason.icon} size={20} />
-              <h3>{reason.title}</h3>
-              <p>{reason.description}</p>
-            </article>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
-export function AutomationProcess() {
-  return (
-    <section className="n8n-section n8n-section--tinted" id="process" aria-labelledby="process-title">
-      <div className="n8n-shell">
-        <N8nSectionHeading
-          id="process-title"
-          eyebrow="Delivery process"
-          title="A connected path from discovery to improvement."
-          description="Each stage makes the next one clearer, with requirements, failure cases, approvals, and delivery expectations agreed before they become surprises."
-        />
-        <ol className="n8n-process-timeline">
-          {processSteps.map((step, index) => (
-            <li key={step.number}>
-              <div className="n8n-process-timeline__rail" aria-hidden="true">
-                <span>{step.number}</span>
-                {index < processSteps.length - 1 && <i />}
-              </div>
-              <div>
-                <small>Step {step.number}</small>
-                <h3>{step.title}</h3>
-                <p>{step.description}</p>
-              </div>
-            </li>
-          ))}
-        </ol>
       </div>
     </section>
   );
