@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
+import { SiteSkipLink } from "@/components/site-skip-link";
 import { navigation, siteConfig } from "@/content/site";
 
 import "./globals.css";
@@ -101,9 +102,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <a className="skip-link" href="#main-content">
-          Skip to content
-        </a>
+        <SiteSkipLink />
         <div className="site-ambient" aria-hidden="true" />
         <SiteHeader navigation={navigation} site={siteConfig} />
         <main id="main-content">{children}</main>

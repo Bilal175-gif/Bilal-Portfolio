@@ -54,6 +54,11 @@ export function SiteHeader({ navigation, site }: SiteHeaderProps) {
     return () => window.removeEventListener("keydown", handleKeyDown);
   }, [isOpen]);
 
+  // The automation service route provides its own section-based navigation.
+  if (pathname === "/n8n") {
+    return null;
+  }
+
   return (
     <header className="site-header">
       <div className="container site-header__inner">

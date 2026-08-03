@@ -1,5 +1,8 @@
+"use client";
+
 import { ArrowUpRight } from "lucide-react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 import { BrandMark } from "@/components/brand-mark";
 
@@ -18,6 +21,13 @@ type SiteFooterProps = {
 };
 
 export function SiteFooter({ navigation, site }: SiteFooterProps) {
+  const pathname = usePathname();
+
+  // The automation service route provides its own service-specific footer.
+  if (pathname === "/n8n") {
+    return null;
+  }
+
   return (
     <footer className="site-footer">
       <div className="container">
