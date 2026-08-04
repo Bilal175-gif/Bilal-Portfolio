@@ -6,7 +6,6 @@ import { HeroWorkflowGraphic } from "@/components/n8n/workflow-graphics";
 import {
   automationServices,
   businessProblems,
-  capabilityStrip,
   heroCapabilities,
 } from "@/content/n8n";
 
@@ -25,9 +24,8 @@ export function AutomationHero() {
             We build intelligent workflows that keep your business <em>moving.</em>
           </h1>
           <p className="n8n-hero__summary">
-            Muhammad Bilal and Abdur Rehman design and develop n8n automations,
-            AI-powered agents, API integrations, and internal systems that reduce
-            repetitive work and connect your business tools.
+            Muhammad Bilal and Abdur Rehman build n8n automations, AI agents, API
+            integrations, and internal systems that connect tools and reduce repetitive work.
           </p>
           <div className="n8n-hero__actions">
             <N8nButtonLink href="#contact">Discuss your workflow</N8nButtonLink>
@@ -45,26 +43,6 @@ export function AutomationHero() {
         </div>
 
         <HeroWorkflowGraphic />
-      </div>
-    </section>
-  );
-}
-
-export function CapabilitiesStrip() {
-  return (
-    <section className="n8n-capability-strip" aria-label="Automation capabilities">
-      <div className="n8n-shell n8n-capability-strip__grid">
-        {capabilityStrip.map((capability) => (
-          <article key={capability.title}>
-            <span className="n8n-capability-strip__icon">
-              <AutomationIcon name={capability.icon} size={18} />
-            </span>
-            <div>
-              <h2>{capability.title}</h2>
-              <p>{capability.description}</p>
-            </div>
-          </article>
-        ))}
       </div>
     </section>
   );

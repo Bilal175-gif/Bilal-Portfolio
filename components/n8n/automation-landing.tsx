@@ -4,36 +4,20 @@ import {
   AutomationFaqSection,
   ClientDelivery,
 } from "@/components/n8n/sections/delivery-contact";
-import {
-  AutomationHero,
-  AutomationServices,
-  BusinessProblems,
-  CapabilitiesStrip,
-} from "@/components/n8n/sections/hero-solutions";
-import {
-  AutomationProjects,
-  AutomationTeam,
-} from "@/components/n8n/sections/projects-team";
-import {
-  AutomationArchitecture,
-  IntegrationsGrid,
-  InteractiveWorkflowPreview,
-} from "@/components/n8n/sections/workflow-architecture";
-import { n8nNavigation } from "@/content/n8n";
+import { AutomationHero, AutomationServices, BusinessProblems } from "@/components/n8n/sections/hero-solutions";
+import { AutomationTeam } from "@/components/n8n/sections/projects-team";
+import { AutomationArchitecture, IntegrationsGrid } from "@/components/n8n/sections/workflow-architecture";
 import { siteConfig } from "@/content/site";
 
 export function AutomationLanding() {
   return (
     <div className="n8n-page">
-      <N8nHeader navigation={n8nNavigation} site={siteConfig} />
+      <N8nHeader site={siteConfig} />
       <AutomationHero />
-      <CapabilitiesStrip />
       <BusinessProblems />
       <AutomationServices />
-      <InteractiveWorkflowPreview />
       <AutomationArchitecture />
       <IntegrationsGrid />
-      <AutomationProjects />
       <AutomationTeam />
       <ClientDelivery />
       <AutomationFaqSection />
