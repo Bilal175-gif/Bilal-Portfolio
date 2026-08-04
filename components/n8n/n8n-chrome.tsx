@@ -15,8 +15,6 @@ type N8nHeaderProps = {
 const navigation = [
   { href: "#solutions", label: "Solutions" },
   { href: "#services", label: "Services" },
-  { href: "#workflows", label: "Workflows" },
-  { href: "#team", label: "Team" },
   { href: "#faq", label: "FAQ" },
 ] as const;
 
@@ -44,7 +42,7 @@ export function N8nHeader({ site }: N8nHeaderProps) {
     <header className="n8n-header" data-scrolled={scrolled} data-menu-open={menuOpen}>
       <div className="n8n-header__inner">
         <a className="n8n-header__brand" href="/" aria-label="Visit Muhammad Bilal's portfolio">
-          <BrandMark name={site.name} title="Automation studio" />
+          <BrandMark compact name={site.name} />
         </a>
 
         <nav className="n8n-header__desktop-nav" aria-label="Automation page navigation">
