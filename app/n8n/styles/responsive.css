@@ -242,7 +242,7 @@
     display: flex;
     flex: 1;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: center;
     gap: clamp(0.55rem, 1.2vw, 1.1rem);
   }
 
@@ -421,6 +421,22 @@
 
   .n8n-process-timeline {
     grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 719px) {
+  .n8n-header__brand .brand__copy span {
+    display: none;
+  }
+
+  .n8n-header__cta {
+    display: none;
+  }
+}
+
+@media (max-width: 419px) {
+  .n8n-header__brand .brand__copy {
+    display: none;
   }
 }
 
