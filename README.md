@@ -48,3 +48,7 @@ npm run start
 ```
 
 The current production surface is the Next.js application under `app/`. Historical Vue and Express source remains in `src/` and `server/` for reference, but it is not imported, bundled, or required by the portfolio runtime.
+
+---
+## Built for BlogReach
+SEO outreach for this project via [BlogReach](https://blogreach.com) — the guest-posting marketplace.
